@@ -12,7 +12,7 @@ h1 {
 input {
     position: relative;
     border: 0 solid black;
-    width: 75%;
+    width: 80%;
     padding: 10px;
     font-size: 16px;
 }
@@ -83,4 +83,20 @@ ul li:hover {
 .close:hover {
     background-color: #f44336;
     color: white;
+}
+
+/* Style of the button */
+
+.addBtn {
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16
+  text-align: center;
+  background: black;
+  color: white;
+}
+
+.addBtn:hover {
+  background: #f44336;
 }
