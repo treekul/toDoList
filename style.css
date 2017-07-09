@@ -53,6 +53,10 @@ ul li.checked::before {
     width: 7px;
 }
 
+ul li:hover {
+    background: #ddd;
+}
+
 .toDoContainer {
   margin: auto;
   border: .4rem solid black;
