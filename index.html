@@ -8,14 +8,49 @@
     <div class='toDoContainer'>
       <h1>To Do List</h1>
       <div class="toDoInput">
-        <input type="text" name="todoTxt" placeholder="What to do what to do...?">
-        <span onclick="newElement()" class="addBtn">Add</span>
+        <input type="text" name="todoTxt" id="myInput" placeholder="What to do what to do...?">
+        <span onclick="newToDo()" class="addBtn">Add</span>
       </div>
-      <ul>
+      <ul id="myUL">
         <li class="checked">Shopping: Eggs, Bread, Milk<span class="close">x</span></li>
         <li>Upcoming Birthday: 03Aug17<span class="close">x</span></li>
         <li>Car service due 2weeks<span class="close">x</span></li>
       </ul>
     </div>
+    <script>
+      document.getElementById("myInput")
+        .addEventListener("keyup", function(event) {
+        event.preventDefault();
+        if (event.keyCode == 13) {
+          newToDo();
+        }
+      });
+
+      function newToDo() {
+        var li = document.createElement("li");
+        var inputValue = document.getElementById("myInput").value;
+        var t = document.createTextNode(inputValue);
+        li.appendChild(t);
+        if (inputValue === '') {
+          alert("You must write something!");
+        } else {
+          document.getElementById("myUL").appendChild(li);
+        }
+        document.getElementById("myInput").value = "";
+
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        li.appendChild(span);
+
+        for (i = 0; i < close.length; i++) {
+          close[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
+          }
+        }
+      }
+    </script
   </body>
 </html>
